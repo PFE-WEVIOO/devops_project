@@ -1,0 +1,82 @@
+{
+    "template": {
+        "className": "org.joget.apps.datalist.lib.SimpleCardTemplate",
+        "properties": {
+            "image": "",
+            "inlineLabel": "",
+            "footerMsg": "",
+            "cardAction": "",
+            "columns_desktop": "col-lg-3",
+            "columns_mobile": "col-12",
+            "columns_tablet": "col-md-6"
+        }
+    },
+    "considerFilterWhenGetTotal": "",
+    "useSession": "",
+    "responsiveMode": "",
+    "rowActions": [],
+    "columns": [{
+        "filterable": true,
+        "hidden": "false",
+        "style-custom": "background-color: #f4f4f4;\r\ncolor: #2c3e50;\r\nfont-family: monospace;\r\nfont-size: 14px;\r\nborder: 1px solid #ccc;\r\nborder-radius: 8px;\r\npadding: 16px;\r\noverflow-y: auto;\r\nwhite-space: pre-wrap;\r\nline-height: 1.4;\r\n",
+        "renderHtml": "",
+        "format": {
+            "className": "",
+            "properties": {}
+        },
+        "style-min-width": "600px",
+        "label": "Logs",
+        "sortable": "false",
+        "datalist_type": "column",
+        "exclude_export": "",
+        "name": "logs",
+        "width": "",
+        "headerAlignment": "",
+        "action": {
+            "className": "",
+            "properties": {}
+        },
+        "style": "",
+        "id": "column_0",
+        "alignment": ""
+    }],
+    "pageSize": "0",
+    "orderBy": "",
+    "description": "",
+    "filters": [],
+    "showDataWhenFilterSet": "",
+    "pageSizeSelectorOptions": "10,20,30,40,50,100",
+    "hidePageSize": "",
+    "card-style-min-width": "1290px",
+    "card-style-custom": "background-color: #ffffff;\r\nborder-radius: 12px;\r\nbox-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);\r\npadding: 20px;\r\nmargin: 0 auto;\r\n",
+    "name": "liste des logs des containers",
+    "id": "list_containers_logs",
+    "binder": {
+        "className": "org.joget.apps.datalist.lib.JsonApiDatalistBinder",
+        "properties": {
+            "headers": [
+                {
+                    "name": "label",
+                    "value": "#requestParam.id_vm#"
+                },
+                {
+                    "name": "Container-Name",
+                    "value": "#requestParam.id_c#"
+                }
+            ],
+            "joinObjectKeysAndValues": "",
+            "requestType": "",
+            "jsonUrl": "http://localhost:5050/api/vm/docker/container/logs",
+            "handlePaging": "true",
+            "multirowBaseObject": "response",
+            "copyCookies": "",
+            "totalRowCountObject": "",
+            "handleFilters": "true",
+            "debugMode": "",
+            "sampleResponse": "{\r\n        \"container\": \"joget\",\r\n        \"logs\": \"Buildfile: build.xml\\n\\nsetup-db:\\n    [input] skipping input as property db.host has already been set.\\n    [input] skipping input as property db.port has already been set.\\n    [input] skipping input as property db.name has already been set.\\n    [input] skipping input as property db.user has already been set.\\n    [input] skipping input as property db.password has already been set.\\n    [input] skipping input as property profile.name has already been set.\\n\\ncreate-db:\\n     [echo] Creating database, please wait...\\n     [exec] mysql: [Warning] Using a password on the command line interface can be insecure.\\n     [exec] ERROR 2003 (HY000): Can't connect to MySQL server on 'jwdb:3306' (111)\\n     [exec] mysql: [Warning] Using a password on the command line interface can be insecure.\\n     [exec] ERROR 2003 (HY000): Can't connect to MySQL server on 'jwdb:3306' (111)\\n\\ncreate-profile:\\n     [copy] Copying 1 file to /opt/joget/wflow\\n[propertyfile] Updating property file: /opt/joget/wflow/app_datasource.properties\\n\\nsetup:\\n\\nBUILD SUCCESSFUL\\nTotal time: 4 seconds\\n===== Initializing WebApplicationContext =====\\nINFO  05 Jun 2025 09:15:25 org.joget.commons.util.SetupManager - Using base directory: /opt/joget/wflow/\\nINFO  05 Jun 2025 09:15:51 org.joget.commons.util.DynamicDataSource - profileName=default, url=jdbc:mysql://jwdb:3306/jwdb?characterEncoding=UTF-8, user=joget\\nINFO  05 Jun 2025 09:15:56 org.joget.commons.util.DatabaseUtil - Fixing database charset to utf8mb4 and collation to utf8mb4_unicode_ci\\nINFO  05 Jun 2025 09:15:56 org.joget.commons.util.DatabaseUtil - Fail to fix db collation\\nINFO  05 Jun 2025 09:16:03 bitronix.tm.BitronixTransactionManager - Bitronix Transaction Manager version 2.1.4\\nINFO  05 Jun 2025 09:16:03 bitronix.tm.Configuration - JVM unique ID: <btm-joget>\\nINFO  05 Jun 2025 09:16:03 bitronix.tm.recovery.Recoverer - recovery committed 0 dangling transaction(s) and rolled back 0 aborted transaction(s) on 0 resource(s) [] (restricted to serverId 'btm-joget')\\nINFO  05 Jun 2025 09:16:05 org.joget.commons.util.SetupManager - Initializing setup cache\\nINFO  05 Jun 2025 09:16:07 org.joget.plugin.base.PluginManager - PluginManager initialized\\nINFO  05 Jun 2025 09:16:27 org.joget.workflow.model.service.WorkflowManagerImpl - Datasource bound to jwdb\\nSharkEngineManager -> Shark engine is being initialized ...\\nShark -> shark engine initialization is finished, it lasted 28 [s]\\nShark -> SharkExampleJSP ready and waiting ...\\nINFO  05 Jun 2025 09:17:13 org.displaytag.filter.ResponseOverrideFilter - Filter initialized. Response buffering is enabled\\nINFO  05 Jun 2025 13:09:10 org.displaytag.properties.TableProperties - LocaleResolver initialized to org.joget.apps.app.web.LocalLocaleResolver.\\nINFO  05 Jun 2025 13:35:38 org.joget.apps.workflow.security.WorkflowAuthenticationProvider - Authentication for user admin (192.168.56.1) : true\",\r\n        \"status\": \"ok\",\r\n        \"vm\": \"pipeline-ci\"\r\n    }",
+            "primaryKey": "container"
+        }
+    },
+    "actions": [],
+    "order": ""
+}

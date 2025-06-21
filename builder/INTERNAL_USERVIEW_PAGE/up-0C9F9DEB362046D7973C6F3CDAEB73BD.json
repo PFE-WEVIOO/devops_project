@@ -1,0 +1,16 @@
+{
+    "elements": [
+        {
+            "className": "org.joget.plugin.enterprise.HtmlCodeComponent",
+            "properties": {
+                "attr-data-events-listening": [],
+                "textContent": "<html>\r\n    <h2 class=\"log-title\">\r\n    <i class=\"fas fa-file-alt\"><\/i> Logs du Conteneur\r\n<\/h2>\r\n\r\n<style>\r\n    .log-title {\r\n    text-align: center;\r\n    font-size: 20px;\r\n    font-weight: bold;\r\n    color: #2c3e50;\r\n    margin-bottom: 20px;\r\n}\r\n\r\n.log-title i {\r\n    margin-right: 8px;\r\n    color: #3498db;\r\n}\r\n\r\n<\/style>\r\n<\/html>\r\n",
+                "id": "7DB3799D962B4892FEC8159C26DC4DF7",
+                "customId": ""
+            }
+        },
+        {"className": "menu-component"}
+    ],
+    "className": "org.joget.apps.userview.model.UserviewPage",
+    "properties": {"id": "up-0C9F9DEB362046D7973C6F3CDAEB73BD"}
+}

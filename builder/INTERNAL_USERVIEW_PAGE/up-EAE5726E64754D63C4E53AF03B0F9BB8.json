@@ -1,0 +1,16 @@
+{
+    "elements": [
+        {
+            "className": "org.joget.plugin.enterprise.HtmlCodeComponent",
+            "properties": {
+                "attr-data-events-listening": [],
+                "textContent": "<html>\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <title>Monitoring des Conteneurs<\/title>\r\n    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css\">\r\n    <style>\r\n        /* Le CSS est juste en dessous */\r\n    <\/style>\r\n<\/head>    \r\n<h1 class=\"page-title\">\r\n    <i class=\"fa-brands fa-docker\"><\/i> Monitoring des Conteneurs Docker\r\n<\/h1>\r\n\r\n    <style>\r\n        .page-title {\r\n    text-align: center;\r\n    font-size: 2rem;\r\n    color: #003366;\r\n    margin-bottom: 30px;\r\n}\r\n\r\n.page-title i {\r\n    margin-right: 10px;\r\n    color: #2496ED;\r\n}\r\n\r\n    <\/style>\r\n<\/html>\r\n",
+                "id": "B065623DC86042668B727AC5C8F56CA7",
+                "customId": ""
+            }
+        },
+        {"className": "menu-component"}
+    ],
+    "className": "org.joget.apps.userview.model.UserviewPage",
+    "properties": {"id": "up-EAE5726E64754D63C4E53AF03B0F9BB8"}
+}

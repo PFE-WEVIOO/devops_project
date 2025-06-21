@@ -1,0 +1,325 @@
+{
+    "elements": [
+        {
+            "elements": [{
+                "elements": [
+                    {
+                        "className": "org.joget.apps.form.lib.TextField",
+                        "properties": {
+                            "requiredSanitize": "",
+                            "maxlength": "",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "label": "Label",
+                            "disableIncrementDecrementArrow": "",
+                            "readonly": "",
+                            "size": "",
+                            "workflowVariable": "",
+                            "style": "",
+                            "id": "label",
+                            "placeholder": "",
+                            "value": "",
+                            "readonlyLabel": "",
+                            "storeNumeric": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.TextField",
+                        "properties": {
+                            "requiredSanitize": "",
+                            "maxlength": "",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "label": "Adresse IP",
+                            "disableIncrementDecrementArrow": "",
+                            "readonly": "",
+                            "size": "",
+                            "workflowVariable": "",
+                            "style": "",
+                            "id": "ip",
+                            "placeholder": "",
+                            "value": "",
+                            "readonlyLabel": "",
+                            "storeNumeric": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.TextField",
+                        "properties": {
+                            "requiredSanitize": "",
+                            "maxlength": "",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "label": "Port SSH",
+                            "disableIncrementDecrementArrow": "",
+                            "readonly": "",
+                            "size": "",
+                            "workflowVariable": "",
+                            "style": "",
+                            "id": "port",
+                            "placeholder": "",
+                            "value": "",
+                            "readonlyLabel": "",
+                            "storeNumeric": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.TextField",
+                        "properties": {
+                            "requiredSanitize": "",
+                            "maxlength": "",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "label": "Nom d'utilisateur SSH",
+                            "disableIncrementDecrementArrow": "",
+                            "readonly": "",
+                            "size": "",
+                            "workflowVariable": "",
+                            "style": "",
+                            "id": "username",
+                            "placeholder": "",
+                            "value": "",
+                            "readonlyLabel": "",
+                            "storeNumeric": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.HiddenField",
+                        "properties": {
+                            "useDefaultWhenEmpty": "",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "workflowVariable": "",
+                            "id": "ssh_status",
+                            "value": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.Radio",
+                        "properties": {
+                            "fullWidth": "",
+                            "controlField": "",
+                            "readonly": "",
+                            "optionsBinder": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "options": [
+                                {
+                                    "label": "Clé SSH",
+                                    "value": "ssh_key",
+                                    "grouping": ""
+                                },
+                                {
+                                    "label": "Mot de passe",
+                                    "value": "password",
+                                    "grouping": ""
+                                }
+                            ],
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "workflowVariable": "",
+                            "label": "Méthode d'authentification",
+                            "id": "auth_method",
+                            "value": "",
+                            "readonlyLabel": ""
+                        }
+                    }
+                ],
+                "className": "org.joget.apps.form.model.Column",
+                "properties": {"width": "100%"}
+            }],
+            "className": "org.joget.apps.form.model.Section",
+            "properties": {
+                "visibilityControl": "",
+                "permissionReadonly": "",
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "label": "Ajouter une Machine Virtuelle",
+                "reverse": "",
+                "storeBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "visibilityValue": "",
+                "regex": "",
+                "readonly": "",
+                "loadBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "comment": "",
+                "id": "ajout_machine_virtuelle",
+                "join": "",
+                "readonlyLabel": ""
+            }
+        },
+        {
+            "elements": [{
+                "elements": [{
+                    "className": "org.joget.apps.form.lib.TextArea",
+                    "properties": {
+                        "requiredSanitize": "",
+                        "readonly": "",
+                        "validator": {
+                            "className": "",
+                            "properties": {}
+                        },
+                        "workflowVariable": "",
+                        "label": "Clé SSH",
+                        "id": "ssh_key",
+                        "placeholder": "",
+                        "rows": "5",
+                        "cols": "20",
+                        "value": "",
+                        "readonlyLabel": ""
+                    }
+                }],
+                "className": "org.joget.apps.form.model.Column",
+                "properties": {"width": "100%"}
+            }],
+            "className": "org.joget.apps.form.model.Section",
+            "properties": {
+                "visibilityControl": "auth_method",
+                "permissionReadonly": "",
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "label": "",
+                "reverse": "",
+                "storeBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "visibilityValue": "ssh_key",
+                "regex": "",
+                "readonly": "",
+                "loadBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "comment": "",
+                "id": "ssh key",
+                "join": "",
+                "readonlyLabel": ""
+            }
+        },
+        {
+            "elements": [{
+                "elements": [{
+                    "className": "org.joget.apps.form.lib.PasswordField",
+                    "properties": {
+                        "strengthChecker": "",
+                        "readonly": "",
+                        "size": "",
+                        "maxlength": "",
+                        "validator": {
+                            "className": "",
+                            "properties": {}
+                        },
+                        "label": "Mot de passe",
+                        "id": "password",
+                        "value": "",
+                        "readonlyLabel": ""
+                    }
+                }],
+                "className": "org.joget.apps.form.model.Column",
+                "properties": {"width": "100%"}
+            }],
+            "className": "org.joget.apps.form.model.Section",
+            "properties": {
+                "visibilityControl": "auth_method",
+                "permissionReadonly": "",
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "label": "",
+                "reverse": "",
+                "storeBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "visibilityValue": "password",
+                "regex": "",
+                "readonly": "",
+                "loadBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "comment": "",
+                "id": "password",
+                "join": "",
+                "readonlyLabel": ""
+            }
+        },
+        {
+            "elements": [{
+                "elements": [{
+                    "className": "org.joget.apps.form.lib.CustomHTML",
+                    "properties": {
+                        "requiredSanitize": "",
+                        "style-margin-top": "-20px",
+                        "autoPopulate": "",
+                        "style-margin-bottom": "-40px",
+                        "label": "",
+                        "id": "button",
+                        "value": "<button type=\"button\" onclick=\"validateSSH()\" class=\"btn btn-primary\">Valider la connexion SSH<\/button>\r\n<div id=\"validation-result\" style=\"margin-top:10px;\"><\/div>\r\n\r\n<script>\r\n// Variable globale pour tracker le statut de validation SSH\r\nlet sshValidated = false;\r\n\r\n// Fonction pour désactiver le bouton Save par défaut au chargement de la page\r\n$(document).ready(function() {\r\n    // Désactiver le bouton Save par défaut\r\n    disableSaveButton();\r\n    \r\n    // Surveiller les changements dans le formulaire pour réinitialiser la validation\r\n    $('input, select, textarea').on('change', function() {\r\n        // Si un champ change, réinitialiser la validation SSH\r\n        if (sshValidated) {\r\n            sshValidated = false;\r\n            disableSaveButton();\r\n            $('#validation-result').html('<span style=\"color: orange;\">⚠️ Veuillez revalider la connexion SSH après modification<\/span>');\r\n        }\r\n    });\r\n});\r\n\r\nfunction disableSaveButton() {\r\n    // Différentes façons de cibler le bouton Save selon la version de Joget\r\n    $('input[type=\"submit\"][value=\"Save\"]').prop('disabled', true).addClass('disabled');\r\n    $('button[type=\"submit\"]').prop('disabled', true).addClass('disabled');\r\n    $('.form-button input[type=\"submit\"]').prop('disabled', true).addClass('disabled');\r\n    $('input[name=\"submitButton\"]').prop('disabled', true).addClass('disabled');\r\n}\r\n\r\nfunction enableSaveButton() {\r\n    // Réactiver le bouton Save\r\n    $('input[type=\"submit\"][value=\"Save\"]').prop('disabled', false).removeClass('disabled');\r\n    $('button[type=\"submit\"]').prop('disabled', false).removeClass('disabled');\r\n    $('.form-button input[type=\"submit\"]').prop('disabled', false).removeClass('disabled');\r\n    $('input[name=\"submitButton\"]').prop('disabled', false).removeClass('disabled');\r\n}\r\n\r\nfunction validateSSH() {\r\n    const ip = $('[id$=\"ip\"]').val();\r\n    const port = $('[id$=\"port\"]').val() || 22;\r\n    const username = $('[id$=\"username\"]').val();\r\n    const auth_method = $('input[name$=\"auth_method\"]:checked').val();\r\n    const password = $('input[name$=\"password\"]').val();\r\n    const ssh_key = $('[id$=\"ssh_key\"]').val();\r\n    const label = $('[id$=\"label\"]').val();\r\n\r\n\r\n    // Validation des champs requis\r\n    if (!ip || !username || !auth_method) {\r\n        $('#validation-result').html('<span style=\"color: red;\">❌ Veuillez remplir tous les champs requis<\/span>');\r\n        return;\r\n    }\r\n\r\n    if (auth_method === 'password' && !password) {\r\n        $('#validation-result').html('<span style=\"color: red;\">❌ Veuillez saisir le mot de passe<\/span>');\r\n        return;\r\n    }\r\n\r\n    if (auth_method === 'ssh_key' && !ssh_key) {\r\n        $('#validation-result').html('<span style=\"color: red;\">❌ Veuillez saisir la clé SSH<\/span>');\r\n        return;\r\n    }\r\n\r\n    const payload = {\r\n        ip: ip,\r\n        port: parseInt(port),\r\n        username: username,\r\n        auth_method: auth_method,\r\n        label: label\r\n    };\r\n\r\n    if (auth_method === 'password') {\r\n        payload.password = password;\r\n    } else if (auth_method === 'ssh_key') {\r\n        payload.ssh_key = ssh_key;\r\n    }\r\n\r\n    console.log(\"Payload à envoyer à l'API :\", payload);\r\n    $('#validation-result').html('<em>Vérification en cours...<\/em>');\r\n\r\n    fetch('http://localhost:5050/api/vm/validate', {\r\n        method: 'POST',\r\n        headers: {\r\n            'Content-Type': 'application/json'\r\n        },\r\n        body: JSON.stringify(payload)\r\n    })\r\n    .then(response => response.json())\r\n    .then(data => {\r\n        if (data.status === \"success\") {\r\n            // Marquer SSH comme validé\r\n            sshValidated = true;\r\n            \r\n            // Mettre à jour le champ status\r\n            $('#ssh_status').val('success');\r\n            \r\n            // Afficher le message de succès\r\n            $('#validation-result').html('<span style=\"color: green;\">✅ ' + data.message + '<\/span>');\r\n            \r\n            // Réactiver le bouton Save\r\n            enableSaveButton();\r\n            \r\n        } else {\r\n            // SSH non validé\r\n            sshValidated = false;\r\n            \r\n            // Mettre à jour le champ status\r\n            $('#ssh_status').val('failed');\r\n            \r\n            // Afficher le message d'erreur\r\n            $('#validation-result').html('<span style=\"color: red;\">❌ ' + data.message + '<\/span>');\r\n            \r\n            // Garder le bouton Save désactivé\r\n            disableSaveButton();\r\n        }\r\n    })\r\n    .catch(error => {\r\n        // Erreur de connexion\r\n        sshValidated = false;\r\n        \r\n        // Mettre à jour le champ status\r\n        $('#ssh_status').val('failed');\r\n        \r\n        // Afficher l'erreur\r\n        $('#validation-result').html('<span style=\"color: red;\">❌ Erreur: ' + error + '<\/span>');\r\n        \r\n        // Garder le bouton Save désactivé\r\n        disableSaveButton();\r\n    });\r\n}\r\n\r\n// Intercepter le submit du formulaire pour vérification finale\r\n$(document).on('submit', 'form', function(e) {\r\n    if (!sshValidated) {\r\n        e.preventDefault();\r\n        alert('Veuillez valider la connexion SSH avant d\\'enregistrer le formulaire.');\r\n        return false;\r\n    }\r\n    return true;\r\n});\r\n\r\n$(document).ready(function() {\r\n    $('.form-section').css('background', '#eaf4ff');\r\n});\r\n\r\n\r\n<\/script>\r\n\r\n<style>\r\n/* Style pour les boutons désactivés */\r\n.disabled {\r\n    opacity: 0.5;\r\n    cursor: not-allowed !important;\r\n}\r\n\r\n#validation-result {\r\n    padding: 10px;\r\n    border-radius: 4px;\r\n    margin-top: 10px;\r\n}\r\n<\/style>"
+                    }
+                }],
+                "className": "org.joget.apps.form.model.Column",
+                "properties": {"width": "100%"}
+            }],
+            "className": "org.joget.apps.form.model.Section",
+            "properties": {
+                "visibilityControl": "",
+                "permissionReadonly": "",
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "label": "",
+                "reverse": "",
+                "storeBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "visibilityValue": "",
+                "regex": "",
+                "readonly": "",
+                "loadBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "comment": "",
+                "id": "button",
+                "join": "",
+                "readonlyLabel": ""
+            }
+        }
+    ],
+    "className": "org.joget.apps.form.model.Form",
+    "properties": {
+        "loadBinder": {"className": "org.joget.apps.form.lib.WorkflowFormBinder"},
+        "name": "Ajouter une machine virtuelle",
+        "description": "",
+        "id": "ajouter_machine_virtuelle",
+        "storeBinder": {"className": "org.joget.apps.form.lib.WorkflowFormBinder"},
+        "tableName": "machine_virtuelle"
+    }
+}

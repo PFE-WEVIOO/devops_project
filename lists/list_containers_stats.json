@@ -1,0 +1,76 @@
+{
+    "template": {
+        "className": "",
+        "properties": {}
+    },
+    "rowActions": [],
+    "columns": [
+        {
+            "filterable": true,
+            "hidden": "false",
+            "name": "container",
+            "id": "column_0",
+            "label": "container",
+            "sortable": "false"
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "name": "vm",
+            "id": "column_1",
+            "label": "vm",
+            "sortable": "false"
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "name": "memory_usage",
+            "id": "column_2",
+            "label": "memory_usage",
+            "sortable": "false"
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "name": "cpu_percent",
+            "id": "column_3",
+            "label": "cpu_percent",
+            "sortable": "false"
+        }
+    ],
+    "pageSize": "0",
+    "orderBy": "",
+    "description": "",
+    "filters": [],
+    "pageSizeSelectorOptions": "10,20,30,40,50,100",
+    "name": "liste des stats des containers",
+    "id": "list_containers_stats",
+    "binder": {
+        "className": "org.joget.apps.datalist.lib.JsonApiDatalistBinder",
+        "properties": {
+            "headers": [
+                {
+                    "name": "label",
+                    "value": "#requestParam.id_vm#"
+                },
+                {
+                    "name": "Container-Name",
+                    "value": "#requestParam.id_c#"
+                }
+            ],
+            "joinObjectKeysAndValues": "",
+            "requestType": "",
+            "jsonUrl": "http://localhost:5050/api/vm/docker/container/stats",
+            "handlePaging": "true",
+            "multirowBaseObject": "response",
+            "copyCookies": "",
+            "totalRowCountObject": "",
+            "handleFilters": "true",
+            "debugMode": "",
+            "sampleResponse": "{\r\n    \"block_io\": \"227MB / 104MB\",\r\n    \"container\": \"joget\",\r\n    \"cpu_percent\": \"1.50%\",\r\n    \"memory_percent\": \"16.72%\",\r\n    \"memory_usage\": \"2.281GiB / 13.65GiB\",\r\n    \"network_io\": \"9.39MB / 8.46MB\",\r\n    \"status\": \"ok\",\r\n    \"timestamp\": \"2025-06-11T11:41:59.008534\",\r\n    \"vm\": \"pipeline-ci\"\r\n}",
+            "primaryKey": "container"
+        }
+    },
+    "actions": [],
+    "order": ""
+}

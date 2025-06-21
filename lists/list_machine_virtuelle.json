@@ -1,0 +1,251 @@
+{
+    "template": {
+        "className": "org.joget.apps.datalist.lib.SimpleCardTemplate",
+        "properties": {
+            "image": "",
+            "inlineLabel": "",
+            "footerMsg": "",
+            "cardAction": "",
+            "columns_desktop": "col-lg-3",
+            "columns_mobile": "col-12",
+            "columns_tablet": "col-md-6"
+        }
+    },
+    "considerFilterWhenGetTotal": "",
+    "responsiveMode": "",
+    "rowActions": [
+        {
+            "className": "org.joget.apps.datalist.lib.HyperlinkDataListAction",
+            "id": "rowAction_0",
+            "properties": {
+                "hrefColumn": "label",
+                "style-custom": "border-radius: 8px;\r\n\r\n",
+                "hrefParam": "id_vm",
+                "rules": [],
+                "label": "<i class=\"fab fa-docker\"><\/i> ",
+                "href": "liste_des_containers",
+                "confirmation": "",
+                "link-css-display-type": "btn btn-sm btn-success",
+                "datalist_type": "row_action",
+                "target": "_self",
+                "header_label": ""
+            }
+        },
+        {
+            "className": "org.joget.apps.datalist.lib.HyperlinkDataListAction",
+            "id": "rowAction_1",
+            "properties": {
+                "hrefColumn": "label",
+                "style-custom": "border-radius: 8px;\r\n\r\n",
+                "hrefParam": "id_vm",
+                "rules": [],
+                "label": "<i class=\"fab fa-docker\"><\/i> ",
+                "href": "liste_des_containers_stopped",
+                "confirmation": "",
+                "link-css-display-type": "btn btn-sm btn-danger",
+                "datalist_type": "row_action",
+                "target": "_self",
+                "header_label": ""
+            }
+        },
+        {
+            "className": "org.joget.apps.datalist.lib.HyperlinkDataListAction",
+            "id": "rowAction_2",
+            "properties": {
+                "hrefColumn": "label",
+                "style-custom": "border-radius: 8px;\r\n\r\n",
+                "hrefParam": "id_vm",
+                "rules": [],
+                "label": "<i class=\"far fa-image\"><\/i> ",
+                "href": "liste_des_images",
+                "confirmation": "",
+                "link-css-display-type": "btn btn-sm btn-info",
+                "datalist_type": "row_action",
+                "target": "_self",
+                "header_label": ""
+            }
+        },
+        {
+            "className": "org.joget.apps.datalist.lib.HyperlinkDataListAction",
+            "id": "rowAction_3",
+            "properties": {
+                "hrefColumn": "label",
+                "style-custom": "border-radius: 8px;\r\n\r\n",
+                "hrefParam": "id_vm",
+                "rules": [],
+                "label": "<i class=\"fas fa-info-circle\"><\/i> ",
+                "href": "stats_machine_virtuelle",
+                "confirmation": "",
+                "link-css-display-type": "btn btn-sm btn-warning",
+                "datalist_type": "row_action",
+                "target": "_self",
+                "header_label": ""
+            }
+        }
+    ],
+    "columns": [
+        {
+            "filterable": true,
+            "hidden": "false",
+            "style-custom": "color: blue;\r\nfont-weight: bold;\r\ntext-align: center;\r\nmargin-bottom: 5px;\r\n",
+            "renderHtml": "",
+            "format": {
+                "className": "org.joget.BeanShellFormatter",
+                "properties": {"script": "return \"Adresse IP = \"+value;"}
+            },
+            "label": "Adresse IP",
+            "sortable": "false",
+            "datalist_type": "column",
+            "exclude_export": "",
+            "style-right": "50%",
+            "style-left": "50%",
+            "name": "ip",
+            "width": "",
+            "headerAlignment": "dataListAlignCenter",
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "",
+            "id": "column_2",
+            "alignment": "dataListAlignCenter"
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "style-custom": "color: blue;\r\nfont-weight: bold;\r\ntext-align: center;\r\nmargin-bottom: 5px;\r\n",
+            "renderHtml": "",
+            "format": {
+                "className": "org.joget.BeanShellFormatter",
+                "properties": {"script": "return \"Port SSH = \"+value;"}
+            },
+            "label": "Port SSH",
+            "sortable": "false",
+            "datalist_type": "column",
+            "exclude_export": "",
+            "style-right": "50%",
+            "style-text-align": "center",
+            "style-left": "50%",
+            "name": "port",
+            "width": "",
+            "headerAlignment": "dataListAlignCenter",
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "",
+            "id": "column_3",
+            "alignment": "dataListAlignCenter"
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "style-custom": "color: gray;\r\nfont-style: italic;\r\ntext-align: center;\r\nmargin-bottom: 5px;\r\n",
+            "renderHtml": "",
+            "format": {
+                "className": "org.joget.BeanShellFormatter",
+                "properties": {"script": "return \"Méthode d'authentification = \"+value;"}
+            },
+            "label": "Méthode d'authentification",
+            "sortable": "false",
+            "datalist_type": "column",
+            "exclude_export": "",
+            "style-right": "50%",
+            "style-text-align": "center",
+            "style-left": "50%",
+            "name": "auth_method",
+            "width": "",
+            "headerAlignment": "",
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "",
+            "id": "column_0",
+            "alignment": ""
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "style-custom": "color: green;\r\nfont-weight: bold;\r\ntext-align: center;\r\nmargin-bottom: 10px;\r\n",
+            "renderHtml": "",
+            "format": {
+                "className": "org.joget.BeanShellFormatter",
+                "properties": {"script": "return \"Status = \"+value;"}
+            },
+            "label": "ssh_status",
+            "sortable": "false",
+            "datalist_type": "column",
+            "exclude_export": "",
+            "style-right": "50%",
+            "style-text-align": "center",
+            "style-left": "50%",
+            "name": "ssh_status",
+            "width": "",
+            "headerAlignment": "",
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "",
+            "id": "column_4",
+            "alignment": ""
+        }
+    ],
+    "pageSize": "0",
+    "orderBy": "",
+    "description": "",
+    "showDataWhenFilterSet": "",
+    "card-style-custom": "background-color: white;\r\nborder-radius: 16px;\r\nbox-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);\r\npadding: 20px;\r\ntext-align: center;\r\ntransition: transform 0.3s ease, box-shadow 0.3s ease;",
+    "card-style-border-radius": "16px",
+    "id": "list_machine_virtuelle",
+    "binder": {
+        "className": "org.joget.apps.datalist.lib.FormRowDataListBinder",
+        "properties": {
+            "formDefId": "ajouter_machine_virtuelle",
+            "extraCondition": ""
+        }
+    },
+    "card-style-text-align": "center",
+    "order": "",
+    "useSession": "",
+    "columns-style-font-weight": "600",
+    "card-style-hover-custom": "transform: translateY(-4px);\r\nbox-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);",
+    "filters": [],
+    "card-style-border-color": "#B1B1B1",
+    "pageSizeSelectorOptions": "10,20,30,40,50,100",
+    "hidePageSize": "",
+    "column_title": [{
+        "filterable": true,
+        "hidden": "false",
+        "style-custom": "font-size: 20px;\r\nfont-weight: bold;\r\ncolor: black;\r\ntext-align: center;\r\nmargin-bottom: 8px;\r\n",
+        "renderHtml": "",
+        "format": {
+            "className": "org.joget.BeanShellFormatter",
+            "properties": {"script": "return \"Nom de l'image = \"+value;"}
+        },
+        "style-font-size": "22px",
+        "style-text-decoration-style": "solid",
+        "label": "Label",
+        "sortable": "false",
+        "datalist_type": "column",
+        "exclude_export": "",
+        "style-right": "50%",
+        "style-text-align": "center",
+        "style-left": "50%",
+        "name": "label",
+        "width": "",
+        "headerAlignment": "dataListAlignCenter",
+        "action": {
+            "className": "",
+            "properties": {}
+        },
+        "style": "",
+        "id": "column_1",
+        "alignment": "dataListAlignCenter"
+    }],
+    "columns-style-text-align": "center",
+    "card-style-background-color": "#FFFFFF",
+    "name": "Liste des machines virtuelles",
+    "actions": []
+}

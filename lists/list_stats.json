@@ -1,0 +1,154 @@
+{
+    "template": {
+        "className": "",
+        "properties": {}
+    },
+    "considerFilterWhenGetTotal": "",
+    "useSession": "",
+    "responsiveMode": "",
+    "rowActions": [],
+    "columns": [
+        {
+            "filterable": true,
+            "hidden": "false",
+            "name": "cpu",
+            "id": "column_4",
+            "label": "cpu",
+            "sortable": "false"
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "name": "disk.used",
+            "id": "column_11",
+            "label": "disk.used",
+            "sortable": "false",
+            "datalist_type": "column"
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "name": "disk.avail",
+            "id": "column_10",
+            "label": "disk.avail",
+            "sortable": "false",
+            "datalist_type": "column"
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "renderHtml": "",
+            "format": {
+                "className": "org.joget.marketplace.ProgressBarFormatter",
+                "properties": {
+                    "hideNum": "",
+                    "minValue": "0",
+                    "bgColor": "",
+                    "maxValue": "100",
+                    "showPercentage": "",
+                    "pbColor": "",
+                    "fontColor": ""
+                }
+            },
+            "label": "disk.use_percent",
+            "sortable": "false",
+            "datalist_type": "column",
+            "exclude_export": "",
+            "name": "disk.use_percent",
+            "width": "",
+            "headerAlignment": "",
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "",
+            "id": "column_12",
+            "alignment": ""
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "name": "ram.total_mb",
+            "id": "column_13",
+            "label": "ram.total_mb",
+            "sortable": "false"
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "name": "ram.free_mb",
+            "id": "column_14",
+            "label": "ram.free_mb",
+            "sortable": "false"
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "renderHtml": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "label": "ram.usage_percent",
+            "sortable": "false",
+            "datalist_type": "column",
+            "exclude_export": "",
+            "name": "ram.usage_percent",
+            "width": "",
+            "headerAlignment": "",
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "",
+            "id": "column_0",
+            "alignment": ""
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "name": "ram.used_mb",
+            "id": "column_15",
+            "label": "ram.used_mb",
+            "sortable": "false",
+            "datalist_type": "column"
+        }
+    ],
+    "draggabletable": "",
+    "cardCollapsible": "",
+    "pageSize": "0",
+    "orderBy": "",
+    "description": "",
+    "filters": [],
+    "showDataWhenFilterSet": "",
+    "pageSizeSelectorOptions": "10,20,30,40,50,100",
+    "hidePageSize": "",
+    "disableResponsive": "",
+    "cardCollapseByDefault": "",
+    "name": "liste des stats des machines virtuelles",
+    "rowActionsMode": "",
+    "showhidecolumns": "",
+    "id": "list_stats",
+    "binder": {
+        "className": "org.joget.apps.datalist.lib.JsonApiDatalistBinder",
+        "properties": {
+            "headers": [{
+                "name": "label",
+                "value": "#requestParam.id_vm#"
+            }],
+            "joinObjectKeysAndValues": "",
+            "requestType": "",
+            "jsonUrl": "http://127.0.0.1:5050/api/vm/stats",
+            "handlePaging": "true",
+            "multirowBaseObject": "response",
+            "copyCookies": "",
+            "totalRowCountObject": "",
+            "handleFilters": "true",
+            "debugMode": "true",
+            "sampleResponse": "{\r\n    \"cpu\": 1.5,\r\n    \"disk\": {\r\n        \"avail\": \"478M\",\r\n        \"size\": \"39G\",\r\n        \"use_percent\": \"99%\",\r\n        \"used\": \"39G\"\r\n    },\r\n    \"ip\": \"127.0.0.1\",\r\n    \"ram\": {\r\n        \"free_mb\": 7740,\r\n        \"total_mb\": 13973,\r\n        \"usage_percent\": 28.1,\r\n        \"used_mb\": 3926\r\n    },\r\n    \"status\": \"connected\",\r\n    \"timestamp\": \"2025-06-11T09:34:48.387101\",\r\n    \"uptime\": \"18:29:26 up 2 days, 14:11,  2 users,  load average: 0.41, 0.56, 0.30\",\r\n    \"vm\": \"pipeline-ci\"\r\n}",
+            "primaryKey": "vm"
+        }
+    },
+    "actions": [],
+    "order": ""
+}

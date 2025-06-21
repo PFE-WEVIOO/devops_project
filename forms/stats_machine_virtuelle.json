@@ -1,0 +1,65 @@
+{
+    "elements": [{
+        "elements": [{
+            "elements": [
+                {
+                    "className": "org.joget.apps.form.lib.CustomHTML",
+                    "properties": {
+                        "requiredSanitize": "",
+                        "autoPopulate": "",
+                        "label": "",
+                        "id": "field2",
+                        "value": "<html>\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <title>Monitoring des Conteneurs<\/title>\r\n    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css\">\r\n    <style>\r\n        /* Le CSS est juste en dessous */\r\n    <\/style>\r\n<\/head>    \r\n<h1 class=\"page-title\">\r\n    <i class=\"fa-solid fa-chart-simple\"><\/i>Statistiques \r\n<\/h1>\r\n\r\n    <style>\r\n        .page-title {\r\n    text-align: center;\r\n    font-size: 2rem;\r\n    color: #003366;\r\n    margin-bottom: 30px;\r\n}\r\n\r\n.page-title i {\r\n    margin-right: 10px;\r\n    color: #2496ED;\r\n}\r\n\r\n    <\/style>\r\n<\/html>\r\n"
+                    }
+                },
+                {
+                    "className": "org.joget.apps.form.lib.CustomHTML",
+                    "properties": {
+                        "requiredSanitize": "",
+                        "autoPopulate": "",
+                        "label": "",
+                        "id": "stats",
+                        "value": "<div id=\"stats-container\" class=\"stats-card\"><\/div>\r\n\r\n<script>\r\nfunction getParam(name) {\r\n    const url = new URL(window.location.href);\r\n    return url.searchParams.get(name);\r\n}\r\n\r\nconst API_BASE_URL = \"http://127.0.0.1:5050\";\r\n\r\nasync function loadVMStats(vmLabel) {\r\n    try {\r\n        const response = await fetch(`${API_BASE_URL}/api/vm/stats`, {\r\n            method: 'GET',\r\n            headers: {\r\n                'label': vmLabel,\r\n                'Content-Type': 'application/json'\r\n            }\r\n        });\r\n\r\n        if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);\r\n        const statsArray = await response.json();\r\n        const stats = Array.isArray(statsArray) ? statsArray[0] : statsArray;\r\n\r\n        if (!stats || stats.error) throw new Error(stats?.error || \"Données invalides\");\r\n\r\n        const statsContainer = document.getElementById(\"stats-container\");\r\n        if (!statsContainer) return;\r\n\r\n        statsContainer.innerHTML = \"\";\r\n\r\n        const cpu = parseFloat(stats.cpu || 0);\r\n        const ramUsed = stats.ram?.used_mb || 0;\r\n        const ramTotal = stats.ram?.total_mb || 1;\r\n        const ramPercent = ((ramUsed / ramTotal) * 100).toFixed(1);\r\n        const diskUsed = stats.disk?.used || \"N/A\";\r\n        const diskTotal = stats.disk?.size || \"N/A\";\r\n        const diskPercent = parseFloat(stats.disk?.use_percent?.replace('%', '') || 0);\r\n\r\n        statsContainer.innerHTML += `\r\n            <div><strong>CPU:<\/strong> ${cpu.toFixed(1)}%<\/div>\r\n            <div class=\"progress-bar\"><div class=\"progress-fill cpu-progress\" style=\"width: ${cpu}%\"><\/div><\/div>\r\n            <br>\r\n            <div><strong>RAM:<\/strong> ${ramUsed}MB / ${ramTotal}MB (${ramPercent}%)<\/div>\r\n            <div class=\"progress-bar\"><div class=\"progress-fill ram-progress\" style=\"width: ${ramPercent}%\"><\/div><\/div>\r\n            <br>\r\n            <div><strong>Disk:<\/strong> ${diskUsed} / ${diskTotal} (${diskPercent}%)<\/div>\r\n            <div class=\"progress-bar\"><div class=\"progress-fill disk-progress\" style=\"width: ${diskPercent}%\"><\/div><\/div>\r\n        `;\r\n\r\n    } catch (error) {\r\n        document.getElementById(\"stats-container\").innerHTML = `<p style=\"color:red;\">❌ ${error.message}<\/p>`;\r\n    }\r\n}\r\n\r\n// Lancer automatiquement à l'ouverture de la page\r\ndocument.addEventListener(\"DOMContentLoaded\", function () {\r\n    setTimeout(() => {\r\n        const vmLabel = getParam(\"id_vm\");\r\n        if (vmLabel) {\r\n            loadVMStats(vmLabel);\r\n        } else {\r\n            document.getElementById(\"stats-container\").innerHTML = \"<p style='color:red;'>❌ Aucun identifiant de VM fourni.<\/p>\";\r\n        }\r\n    }, 1000); // délai pour laisser Joget charger les variables et composants\r\n});\r\n\r\n<\/script>\r\n\r\n<!-- CSS -->\r\n<style>\r\n.stats-card {\r\n    max-width: 500px;\r\n    margin: 20px auto;\r\n    padding: 20px;\r\n    border-radius: 12px;\r\n    box-shadow: 0 0 10px rgba(0,0,0,0.1);\r\n    background-color: #f9f9f9;\r\n    font-family: Arial, sans-serif;\r\n}\r\n.progress-bar {\r\n    background-color: #e0e0e0;\r\n    border-radius: 8px;\r\n    width: 100%;\r\n    height: 16px;\r\n    position: relative;\r\n    overflow: hidden;\r\n}\r\n.progress-fill {\r\n    height: 100%;\r\n    border-radius: 8px;\r\n    position: absolute;\r\n    left: 0;\r\n    top: 0;\r\n}\r\n.cpu-progress { background-color: #4caf50; }\r\n.ram-progress { background-color: #2196f3; }\r\n.disk-progress { background-color: #f44336; }\r\n<\/style>\r\n"
+                    }
+                }
+            ],
+            "className": "org.joget.apps.form.model.Column",
+            "properties": {"width": "100%"}
+        }],
+        "className": "org.joget.apps.form.model.Section",
+        "properties": {
+            "visibilityControl": "",
+            "permissionReadonly": "",
+            "permission": {
+                "className": "",
+                "properties": {}
+            },
+            "label": "",
+            "reverse": "",
+            "storeBinder": {
+                "className": "",
+                "properties": {}
+            },
+            "visibilityValue": "",
+            "regex": "",
+            "readonly": "",
+            "loadBinder": {
+                "className": "",
+                "properties": {}
+            },
+            "comment": "",
+            "id": "statistique_machine_virtuelle",
+            "join": "",
+            "readonlyLabel": ""
+        }
+    }],
+    "className": "org.joget.apps.form.model.Form",
+    "properties": {
+        "loadBinder": {"className": "org.joget.apps.form.lib.WorkflowFormBinder"},
+        "name": "statistique une machine virtuelle",
+        "description": "",
+        "id": "stats_machine_virtuelle",
+        "storeBinder": {"className": "org.joget.apps.form.lib.WorkflowFormBinder"},
+        "tableName": "stats_machine"
+    }
+}

@@ -1,0 +1,15 @@
+<appDefinition>
+   <appId>machines_virtuelles_management</appId>
+   <id>machines_virtuelles_management</id>
+   <version></version>
+   <name>DevOps VM Control</name>
+   <packageDefinitionList/>
+   <formDefinitionList/>
+   <userviewDefinitionList/>
+   <datalistDefinitionList/>
+   <builderDefinitionList/>
+   <pluginDefaultPropertiesList/>
+   <environmentVariableList/>
+   <messageList/>
+   <resourceList/>
+</appDefinition>
